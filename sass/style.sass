@@ -11,3 +11,52 @@
 @import components/header
 @import components/footer
 
+body
+	background-color: #5a5a5a
+	height: 200vh
+
+.main
+	padding-top: 50px
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+
+.accordion
+	color: $color-white
+	width: 600px
+	&__item
+		transition: $transition
+		height: 70px
+		overflow: hidden
+		padding: 15px
+		background-color: tomato
+		position: relative
+		&:not(:last-child)
+			margin-bottom: 30px
+	&__title
+		font-size: 35px
+		font-weight: 500
+		font-style: italic
+		position: relative
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+			top: 50%
+			right: 0.5em
+			width: 1em
+			height: 2px
+			background-color: $color-black
+			transition: $transition
+		&::before
+			transform: rotate(90deg)
+		&.active
+			&::before
+				transform: rotate(180deg) scaleX(0)
+			&::after
+				transform: rotate(180deg)
+	&__content
+		font-size: 20px
+		padding-top: 1em
+		line-height: 1em

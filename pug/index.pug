@@ -8,6 +8,35 @@ html(lang="ru")
 		title Main Page
 	body
 		include components/header
+		-
+			const accordionItems = [
+				{
+					title: 'Первый',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde sapiente. Adipisci quo quaerat, amet animi, nulla voluptatem, fugit dolorem asperiores a perspiciatis reiciendis cum commodi dolor odio neque mollitia veniam assumenda. Repellat officia cumque saepe ipsa officiis unde? Sunt minima laborum libero repellat vitae omnis sint neque numquam dolorum.'
+				},
+				{
+					title: 'Второй',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde sapiente. Adipisci quo quaerat, amet animi, nulla voluptatem, fugit dolorem asperiores a perspiciatis reiciendis cum commodi dolor odio neque '
+				},
+				{
+					title: 'Третий',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde sapiente. Adipisci quo quaerat, amet animi, nulla voluptatem, fugit dolorem asperiores a perspiciatis reiciendis cum commodi dolor odio neque mollitia veniam assumenda. Repellat officia cumque saepe ipsa officiis unde? Sunt minima laborum libero repellat vitae omnis sint neque numquam dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde sapiente. Adipisci quo quaerat, amet animi, nulla voluptatem, fugit dolorem asperiores a perspiciatis reiciendis cum commodi dolor odio neque mollitia veniam assumenda. Repellat officia cumque saepe ipsa officiis unde? Sunt minima laborum libero repellat vitae omnis sint neque numquam dolorum.'
+				},
+				{
+					title: 'Четвертый',
+					text: 'Lorem ipsum dolor sit amet.'
+				},
+				{
+					title: 'Пятый',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, unde sapiente. Adipisci quo quaerat, amet animi, nulla voluptatem, fugit dolorem asperiores a perspiciatis reiciendis cum commodi dolor odio neque mollitia veniam assumenda. Repellat officia cumque saepe ipsa officiis unde?'
+				},
+			]
+		section.main 
+			.accordion
+				each item in accordionItems
+					.accordion__item 
+						h3.accordion__title= item.title
+						.accordion__content= item.text 
 
 		include components/footer
 		script(src='js/app.min.js')
