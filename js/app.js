@@ -4,4 +4,3 @@ isWebp()
 
 const myAccordion = new Accordion('.accordion')
 myAccordion.init()
-
